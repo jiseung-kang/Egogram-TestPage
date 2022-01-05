@@ -1,44 +1,43 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Egogram</title>
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Egogram</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body>
+<body onload="getData()">
   <section class="page-main">
-    <h1 class="tit-main">Egogram Test</h1>
-    <p>안녕하세요. 에고그램 진단을 시작해볼까요?</p>
-    <img src="./images/main.png" alt="에고그램 메인">
-    <p>준비가 되면</p>
-    <p>아래 버튼을 눌러 시작해주세요.</p>
+    <h1 class="txt-tit">Egogram Test</h1>
+    <p class="txt-desc">에고그램 테스트에 오신 것을 환영합니다.</p>
+    <img src="./images/main.png" alt="에고그램 메인" class="img-main">
+    <p class="txt-desc">준비가 되면</p>
+    <p class="txt-desc">아래 버튼을 눌러 시작해주세요.</p>
     <button type="button" class="btn btn-go_info">다음</button>
   </section>
   <section class="page-info">
-    <h2 class="a11y-blind">정보 입력</h2>
-    <p>테스트를 시작하기 전에</p>
-    <p>간단한 개인 정보를 기입해주세요</p>
-    <small>기입된 정보는 단순 통계 자료로만 이용됨을 알려드립니다.</small>
-    <form action="" method="post">
+    <h2 class="txt-tit">정보 입력</h2>
+    <p class="txt-desc">간단한 정보를 기입해주세요</p>
+    <form>
       <fieldset>
-        <legend>사용자 정보</legend>
-        <label for="email">이메일</label>
+        <legend class="a11y-blind">사용자 정보</legend>
+        <label for="email"></label>
         <input type="text" id="email" placeholder="이메일을 입력해주세요">
-        <label for="age">나이</label>
+        <label for="age"></label>
         <input type="text" id="age" placeholder="만 나이를 입력해주세요">
-        <label for="sex">성별</label>
+        <label for="sex"></label>
         <select id="sex"placeholder="성별">
-          <option value="" selected>선택</option>
+          <option value="" selected>성별을 선택해주세요</option>
           <option value="남">남</option>
           <option value="여">여</option>
           <option value="기타">기타</option>
         </select>
-        <label for="job">직업군</label>
-        <select id="input-job" name="job">
-          <option value="" selected>선택</option>
+        <label for="job"></label>
+        <select id="job">
+          <option value="" selected>직업군을 선택해주세요</option>
           <option value="경영/관리직">경영/관리직</option>
           <option value="자유/전문직">자유/전문직</option>
           <option value="사무/기술직">사무/기술직</option>
@@ -55,12 +54,12 @@
           <option value="기타">기타</option>
         </select>
       </fieldset>
-      <p>아래 버튼을 눌러 테스트를 시작합니다.</p>
-      <button type="submit" class="btn btn-start">시작</button>
     </form>
+    <p>아래 버튼을 눌러 테스트를 시작합니다.</p>
+    <button type="button" class="btn btn-start">시작</button>
   </section>
   <section class="page-test">
-    <h2 class="a11y-blind">에고그램 테스트</h2>
+    <h2 class="txt-tit">Egogram Test</h2>
     <article class="bar-status">
       <h3 class="a11y-blind">Status Bar</h3>
       <div>status bar</div>
@@ -72,26 +71,97 @@
     <article class="box-answer">
       <h4 class="a11y-blind">User answer</h4>
       <ul class="wrap-answer">
-        <li><button type="button" class="btn-yes">그렇다</button></li>
-        <li><button type="button" class="btn-no">아니다</button></li>
-        <li><button type="button" class="btn-soso">보통이다</button></li>
+        <li><button type="button" class="btn btn-answer btn-no">아니다</button></li>
+        <li><button type="button" class="btn btn-answer btn-soso">보통이다</button></li>
+        <li><button type="button" class="btn btn-answer btn-yes">그렇다</button></li>
       </ul>
     </article>
   </section>
   <section class="page-result">
-    <h2 class="a11y-blind">결과</h2>
-    <article>
+    <h2 class="txt-tit">결과</h2>
+    <article class="wrap-res">
       <h3 class="res-type">결과 타입</h3>
-      <div class="res-graph">graph</div>
-      <p class="res-desc">설명</p>
+      <div class="res-graph">
+        <div class="top-legend">
+          <ul>
+            <li>지배적</li>
+            <li>헌신적</li>
+            <li>현실적</li>
+            <li>개방적</li>
+            <li>의존적</li>
+          </ul>
+        </div>
+        <canvas id="myChart"></canvas>
+        <div class="bottom-legend">
+          <ul>
+            <li>관용적</li>
+            <li>방임적</li>
+            <li>즉흥적</li>
+            <li>폐쇄적</li>
+            <li>독단적</li>
+          </ul>
+        </div>
+      </div>
+      <div class="wrap-desc">
+        <p class="res-desc">설명</p>
+        <hr>
+        <p class="res-desc">설명</p>
+        <hr>
+        <p class="res-desc">설명</p>
+        <hr>
+        <p class="res-desc">설명</p>
+      </div>
     </article>
     <ul class="wrap-btn">
-      <li class="btn btn-share">공유하기</li>
-      <li class="btn btn-reset">다시하기</li>
+      <li><button type="button" class="btn btn-share" onclick="js:setShare()">공유하기</button></li>
+      <li><button type="button" class="btn btn-save" onclick="location.href='./index.html'">다시하기</button></li>
     </ul>
   </section>
   <footer>
-    <small class="copyright">copyright 무단 복제 및 배포를 금지합니다.</small>
+    <!-- <small class="txt-small">copyright 무단 복제 및 배포를 금지합니다.</small> -->
   </footer>
+  
+  <!-- firebase -->
+
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+    
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyDoQtNrhebOy_vjByDecPkDBxtdXXielz0",
+      authDomain: "egogram-test-6da7e.firebaseapp.com",
+      databaseURL: "https://egogram-test-6da7e-default-rtdb.firebaseio.com",
+      projectId: "egogram-test-6da7e",
+      storageBucket: "egogram-test-6da7e.appspot.com",
+      messagingSenderId: "362889738306",
+      appId: "1:362889738306:web:4b601d7f0bd800e07b95db",
+      measurementId: "G-MPJXV1PL82"
+    };
+    
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    firebase.initializeApp(firebaseConfig);
+    </script>
+  
+    <!-- kakao -->
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script>
+      Kakao.init('4504659e885134a547c0d521a5c6ae6b');
+      Kakao.isInitialized();
+    </script>
+  
+    <script src="./data/results.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/chart.js"></script>
+    <script src="./js/share.js"></script>
 </body>
 </html>

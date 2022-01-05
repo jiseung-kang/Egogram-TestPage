@@ -1,0 +1,176 @@
+body {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.txt-tit {
+  display: block;
+  position: relative;
+  font-size: 40px;
+  text-align: center;
+  margin: 40px auto;
+}
+
+.txt-desc {
+  font-size: 16px;
+  margin: 12px 0;
+}
+
+.img-main {
+  border-radius: 50%;
+  margin: 20px 0;
+}
+
+.btn {
+  background:lightgray;
+  color: black;
+  padding: 10px;
+  border-radius: 10px;
+  width: 100px;
+  margin: 30px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: sandybrown;
+}
+
+select {
+  cursor: pointer;
+}
+
+.page-info {
+  display: none;
+}
+
+.page-info fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  margin: 50px auto;
+}
+
+.page-info fieldset input, select {
+  text-align: center;
+  border:1px solid silver;
+  border-radius: 20px;;
+  margin: 10px 0;
+  width: 200px;
+}
+
+.page-test {
+  display: none;
+}
+
+.bar-status {
+  margin: 30px auto;
+  width: 300px;
+  height: 30px;
+  border-radius: 20px;
+  background: lightgray;
+}
+
+.box-question {
+  width: 300px;
+  padding: 10px;
+  margin: 30px auto;
+  border-radius: 20px;
+  background: lightgray;
+  font-size: 20px;
+}
+
+.wrap-answer {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-answer {
+  margin: 0 5px;
+  padding: 5px;
+  width: 70px;
+  background: lightgray;
+  cursor: pointer;
+}
+
+.page-result {
+  display: none;
+}
+
+.res-type {
+  display: block;
+  position: relative;
+  color: red;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.wrap-desc {
+  display: block;
+  margin-top: 50px;
+}
+
+.res-graph {
+  display: block;
+  position: relative;
+  width: 350px;
+  height: 300px;
+  margin: 10px auto;
+}
+
+.top-legend ul{
+  display: flex;
+  justify-content: space-between;
+}
+
+#myChart {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.bottom-legend ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.res-desc {
+  display: block;
+  position: relative;
+  font-size: 20px;
+}
+
+.wrap-btn {
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.txt-small {
+  display: block;
+  position: absolute;
+  width: 300px;
+  font-size: 12px;
+  bottom: 10px;
+  left: calc(50% - 150px);
+}
+
+.wrap-res {
+  width: 350px;
+  margin: 0 auto;
+}
+
+.res-desc:first-child {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.res-desc {
+  padding: 5px 10px;
+  margin: 5px;
+  font-size: 16px;
+  line-height: 30px;
+}

@@ -70,7 +70,7 @@ body:not(:-moz-handler-blocked) fieldset {
   display: table-cell;
 }
 
-button, input, label {
+button, input, label, select {
   padding: 0;
   border: none;
   background: none;
@@ -79,5 +79,11 @@ button, input, label {
 }
 
 img {
-  width: 500px;
+  width: 350px;
+}
+
+a {
+  text-decoration: none;
+  margin: 0;
+  width: inherit;
 }
