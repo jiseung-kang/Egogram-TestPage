@@ -1,4 +1,5 @@
-const ctx = document.querySelector('#myChart').getContext('2d');
+function loadChart() {
+  const ctx = document.querySelector('#myChart').getContext('2d');
 const myChart = new Chart(ctx, {
     type: 'line',
     data: {
@@ -39,3 +40,4 @@ const myChart = new Chart(ctx, {
       }
     }
 });
+}

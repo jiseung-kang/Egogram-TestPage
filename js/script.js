@@ -124,7 +124,8 @@ function Next() {
   if (count == lastIndex) {
     pageTest.style.display = "none";
     pageResult.style.display = "block";
-    calResult()
+    calResult();
+    loadChart();
     return
   }
   boxQuestion.textContent = qna[count].q;
