@@ -1,6 +1,6 @@
 function loadChart(cp, np, a, fc, ac) {
   const ctx = document.querySelector('#myChart').getContext('2d');
-const myChart = new Chart(ctx, {
+  const myChart = new Chart(ctx, {
     type: 'line',
     data: {
         labels: ['CP', 'NP', 'A', 'FC', 'AC'],
