@@ -1,4 +1,4 @@
-const lastIndex = 3;
+const lastIndex = 50;
 const btnGo = document.querySelector('.btn-go_info');
 const btnStart = document.querySelector('.btn-start');
 const btnYes = document.querySelector('.btn-yes')
@@ -129,7 +129,6 @@ function Next() {
     return
   }
   boxQuestion.textContent = qna[count].q;
-  console.log(total)
 }
 
 let qna = []
