@@ -65,6 +65,14 @@ select {
   border-radius: 20px;;
   margin: 10px 0;
   width: 200px;
+  padding: 2px;
+}
+
+select:invalid {
+  color: gray;
+}
+option {
+  color: black;
 }
 
 .page-test {
@@ -92,14 +100,13 @@ select {
   padding: 10px 5px;
   margin: 30px auto;
   border-radius: 20px;
-  background: lightgray;
+  background: whitesmoke;
   font-size: 14px;
 }
 
 .wrap-answer {
   display: flex;
   justify-content: center;
-
 }
 
 .btn-answer {
@@ -108,7 +115,7 @@ select {
   margin: 0 5px;
   padding: 5px;
   width: 70px;
-  background: lightgray;
+  background:mistyrose;
   cursor: pointer;
 }
 
