@@ -21,7 +21,7 @@ const resultDesc = document.querySelectorAll('.res-desc');
 
 const date = new Date(+new Date() + 3240 * 10000).toISOString().split("T")[0].replace(/-/g, '');
 
-let userEmail = "0";
+let userName = "";
 let userAge = 0;
 let userSex =  "";
 let userJob = "";
@@ -55,7 +55,8 @@ function setData() {
     age: userAge,
     sex: userSex,
     job: userJob,
-    email: userEmail,
+    name: userName,
+    score: total
   });
 }
 
@@ -109,7 +110,7 @@ btnStart.addEventListener('click', () => {
 })
 
 function getInput() {
-  userEmail = document.querySelector('#email').value;
+  userName = document.querySelector('#name').value;
   userAge = document.querySelector('#age').value;
   userSex = document.querySelector('#sex').value;
   userJob = document.querySelector('#job').value;
@@ -161,7 +162,7 @@ function getData() {
 
 function loadChart(cp, np, a, fc, ac) {
   const ctx = document.querySelector('#myChart').getContext('2d');
-const myChart = new Chart(ctx, {
+  const myChart = new Chart(ctx, {
     type: 'line',
     data: {
         labels: ['CP', 'NP', 'A', 'FC', 'AC'],
