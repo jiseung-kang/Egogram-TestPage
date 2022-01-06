@@ -1,10 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Pen+Script&family=Noto+Serif+KR:wght@500;700&display=swap');
+
 body {
+  font-family: 'Noto Serif KR', serif;
   text-align: center;
   display: flex;
   flex-direction: column;
 }
 
 .txt-tit {
+  font-family: 'Do Hyeon', sans-serif;
   display: block;
   position: relative;
   font-size: 40px;
@@ -23,6 +27,8 @@ body {
 }
 
 .btn {
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 30px;
   background:lightgray;
   color: black;
   padding: 10px;
@@ -65,29 +71,40 @@ select {
   display: none;
 }
 
-.bar-status {
+.status {
   margin: 30px auto;
+  height: 15px;
   width: 300px;
-  height: 30px;
   border-radius: 20px;
-  background: lightgray;
+  border: 2px solid lightslategray;
+  border-width: 100%;
+  padding: 1px;
+}
+
+.bar-status {
+  height: 100%;
+  background: lightslategray;
+  border-radius: 20px;
 }
 
 .box-question {
   width: 300px;
-  padding: 10px;
+  padding: 10px 5px;
   margin: 30px auto;
   border-radius: 20px;
   background: lightgray;
-  font-size: 20px;
+  font-size: 14px;
 }
 
 .wrap-answer {
   display: flex;
   justify-content: center;
+
 }
 
 .btn-answer {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 15px;
   margin: 0 5px;
   padding: 5px;
   width: 70px;
@@ -100,6 +117,7 @@ select {
 }
 
 .res-type {
+  font-size: 30px;
   display: block;
   position: relative;
   color: red;
@@ -109,10 +127,12 @@ select {
 
 .wrap-desc {
   display: block;
-  margin-top: 50px;
+  margin-top: 80px;
 }
 
 .res-graph {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 14px;
   display: block;
   position: relative;
   width: 350px;
@@ -159,18 +179,26 @@ select {
 }
 
 .wrap-res {
+  font-family: 'Do Hyeon', sans-serif;
+  font-size: 20px;
   width: 350px;
   margin: 0 auto;
 }
 
-.res-desc:first-child {
-  font-size: 20px;
-  font-weight: 500;
-}
-
 .res-desc {
+  font-family: 'Noto Serif KR', serif;
   padding: 5px 10px;
   margin: 5px;
   font-size: 16px;
   line-height: 30px;
+}
+
+.res-desc:first-child {
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 28px;
+}
+
+.res-desc:nth-child(5) {
+  font-family: 'Do Hyeon', sans-serif;
+  font-size: 24px;
 }

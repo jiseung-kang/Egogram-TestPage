@@ -115,6 +115,9 @@ btnSoso.addEventListener('click', () =>{
 })
 
 function Next() {
+  let status = document.querySelector('.bar-status');
+	status.style.width = (100 / lastIndex) * (count) + '%';
+
   if (count == lastIndex) {
     pageTest.style.display = "none";
     pageResult.style.display = "block";
