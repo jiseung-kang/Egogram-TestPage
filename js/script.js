@@ -18,17 +18,20 @@ const boxQuestion = document.querySelector('.box-question')
 const resultType = document.querySelector('.res-type');
 const resultDesc = document.querySelectorAll('.res-desc');
 
+const date = new Date(+new Date() + 3240 * 10000).toISOString().split("T")[0].replace(/-/g, '');
+
 let userEmail = "0";
 let userAge = 0;
 let userSex =  "";
 let userJob = "";
+let code = date;
 
 let total = [0, 0, 0, 0, 0] // cp, np, a, fc, ac
 let result = '';
 let desc = "";
 
 function setData() {
-  const ref = firebase.database().ref('data');
+  const ref = firebase.database().ref(code);
   ref.push({
     type: result,
     age: userAge,
