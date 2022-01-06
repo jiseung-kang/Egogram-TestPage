@@ -6,8 +6,8 @@ function setShare() {
     const shareTitle = "나의 Egogram 결과";
     const shareDes = result + " : " + desc;
     const shareImage = url + "img/main.png";
-    const resURL = url + '?' + result;
-    // console.log(resURL);
+    const resURL = url + '?' + result + '-' + total[0] + '-' + total[1] + '-' + total[2] + '-' + total[3] + '-' + total[4];
+    console.log(resURL);
 
     Kakao.Link.sendDefault({
         objectType: 'feed',
