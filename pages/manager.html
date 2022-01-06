@@ -6,13 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Egogram</title>
     <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/manager.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <!--favicon -->
-  <link rel="shortcut icon" href="./images/favicon.ico">
-  <link rel="apple-touch-icon-precomposed" href="./images/favicon.ico" />
+  <link rel="shortcut icon" href="../images/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" href="../images/favicon.ico" />
 </head>
 <body onload="loadData()">
+  <header>
+    <h1>Egogram 결과 관리 페이지</h1>
+  </header>
+  <section>
+    <form>
+      <fieldset>
+        <legend class="a11y-blind">시행 날짜별 결과 출력</legend>
+        <select name="date" id="date" required>
+          <option value="" selected hidden>시행 날짜를 선택해주세요.</option>
+        </select>
+      </fieldset>
+    </form>
+    <article class="wrap-data">
+      <h2 class="a11y-blind">결과 출력</h2>
+
+    </article>
+  </section>
 
   
   <!-- firebase -->
