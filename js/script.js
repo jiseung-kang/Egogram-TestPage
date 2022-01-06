@@ -37,7 +37,7 @@ function initPage() {
     let tmp = location.search.replace('?', '').split('-');
     loadChart(tmp[1],tmp[2],tmp[3],tmp[4],tmp[5])
     result = tmp[0];
-    // result = location.search.replace('?', '');
+    btnReset.innerHTML = "나도하기";
     viewResult(result)
     setResultForm()
 	}
@@ -90,11 +90,10 @@ function viewResult(type) {
   desc = tmp.desc;
 
   resultType.textContent = result;
-  resultDesc[0].innerHTML = tmp.desc.replace(/\n/g, '<br/><br/>');;
-  resultDesc[1].innerHTML = tmp.per.replace(/\n/g, '<br/><br/>');;
-  resultDesc[2].innerHTML = tmp.manage.replace(/\n/g, '<br/>');;
-  resultDesc[3].innerHTML = tmp.rel.replace(/\n/g, '<br/>');;
-
+  resultDesc[0].innerHTML = tmp.desc.replace(/\n/g, '<br/><br/>');
+  resultDesc[1].innerHTML = tmp.per.replace(/\n/g, '<br/><br/>');
+  resultDesc[2].innerHTML = tmp.manage.replace(/\n/g, '<br/>');
+  resultDesc[3].innerHTML = tmp.rel.replace(/\n/g, '<br/>');
 }
 
 btnGo.addEventListener('click', () => {
@@ -160,49 +159,47 @@ function getData() {
     });
   }
 
-
-
-  function loadChart(cp, np, a, fc, ac) {
-    const ctx = document.querySelector('#myChart').getContext('2d');
-  const myChart = new Chart(ctx, {
-      type: 'line',
-      data: {
-          labels: ['CP', 'NP', 'A', 'FC', 'AC'],
-          datasets: [{
-              label: '결과',
-              data: [cp, np, a, fc, ac],
-              // data: [total[0], total[1], total[2], total[3], total[4]],
-              backgroundColor: [
-                  'rgba(255, 99, 132, 0.2)',
-                  'rgba(54, 162, 235, 0.2)',
-                  'rgba(255, 206, 86, 0.2)',
-                  'rgba(75, 192, 192, 0.2)',
-                  'rgba(153, 102, 255, 0.2)',
-                  'rgba(255, 159, 64, 0.2)'
-              ],
-              borderColor: [
-                  'rgba(255, 99, 132, 1)',
-                  'rgba(54, 162, 235, 1)',
-                  'rgba(255, 206, 86, 1)',
-                  'rgba(75, 192, 192, 1)',
-                  'rgba(153, 102, 255, 1)',
-                  'rgba(255, 159, 64, 1)'
-              ],
-              borderWidth: 1,
-          }]
-      },
-      options: {
-        legend: {
-          display: false
-      },
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-          y: {
-            min: 0,
-            max: 20,
-          }
+function loadChart(cp, np, a, fc, ac) {
+  const ctx = document.querySelector('#myChart').getContext('2d');
+const myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['CP', 'NP', 'A', 'FC', 'AC'],
+        datasets: [{
+            label: '결과',
+            data: [cp, np, a, fc, ac],
+            // data: [total[0], total[1], total[2], total[3], total[4]],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1,
+        }]
+    },
+    options: {
+      legend: {
+        display: false
+    },
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          min: 0,
+          max: 20,
         }
       }
-  });
-  }
+    }
+});
+}
