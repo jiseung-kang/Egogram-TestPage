@@ -38,28 +38,21 @@ function loadData() {
 
 // 전체 데이터 로드
 function loadAllUserData() {
-  
+  clearData()
   for (let date in allData) {
-    const value = allData[date]
-    for (let v in value) {
-      let title = document.createElement('div');
-      title.textContent = `${value[v].name} ${value[v].sex} ${value[v].age} ${value[v].job}`;
-      wrapData.appendChild(title)
-      let score = [value[v].score[0], value[v].score[1], value[v].score[2], value[v].score[3], value[v].score[4]] 
-      let chart = document.createElement('canvas');
-      loadChartManager(score[0], score[1], score[2], score[3], score[4], chart)
-      title.appendChild(chart)
-    }
+    let value = allData[date]
+    setResultPage(value);
   }
 }
 
 // 해당 날짜 데이터 로드
 function loadSelectedData(date) {
-  while(wrapData.hasChildNodes()){
-    wrapData.removeChild(wrapData.firstChild);
-  }
-
+  clearData();
   let value = allData[date]
+  setResultPage(value);
+}
+
+function setResultPage(value) {
   for (let v in value) {
     let title = document.createElement('div');
     title.textContent = `${value[v].name} ${value[v].sex} ${value[v].age} ${value[v].job}`;
@@ -68,6 +61,15 @@ function loadSelectedData(date) {
     let chart = document.createElement('canvas');
     loadChartManager(score[0], score[1], score[2], score[3], score[4], chart)
     title.appendChild(chart)
+    let type = document.createElement('p');
+    type.textContent = value[v].type;
+    title.appendChild(type);
+  }
+}
+
+function clearData() {
+  while(wrapData.hasChildNodes()){
+    wrapData.removeChild(wrapData.firstChild);
   }
 }
 
