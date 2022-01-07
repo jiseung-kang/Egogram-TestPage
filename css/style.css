@@ -38,10 +38,6 @@ body {
   cursor: pointer;
 }
 
-.btn:hover {
-  background: sandybrown;
-}
-
 select {
   cursor: pointer;
 }
@@ -197,4 +193,10 @@ option {
 .res-desc:nth-child(5) {
   font-family: 'Do Hyeon', sans-serif;
   font-size: 24px;
+}
+
+@media (hover: hover) { 
+  .btn:hover {
+    background: sandybrown;
+  }
 }
