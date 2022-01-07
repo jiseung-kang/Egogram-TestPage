@@ -1,13 +1,12 @@
-function loadChartManager(cp, np, a, fc, ac, c) {
+function loadChart(cp, np, a, fc, ac, c) {
   const ctx = c.getContext('2d');
   const myChart = new Chart(ctx, {
     type: 'line',
     data: {
         labels: ['CP', 'NP', 'A', 'FC', 'AC'],
         datasets: [{
-            label: '결과',
+            label: '',
             data: [cp, np, a, fc, ac],
-            // data: [total[0], total[1], total[2], total[3], total[4]],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',

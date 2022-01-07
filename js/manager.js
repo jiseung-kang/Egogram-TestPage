@@ -54,16 +54,13 @@ function loadSelectedData(date) {
 
 function setResultPage(value) {
   for (let v in value) {
-    let title = document.createElement('div');
-    title.textContent = `${value[v].name} ${value[v].sex} ${value[v].age} ${value[v].job}`;
-    wrapData.appendChild(title)
+    let userInfo = document.createElement('div');
+    userInfo.innerHTML = `<span style="font-weight:700;">${value[v].name} ${value[v].sex}  ${value[v].age} ${value[v].type}</span>  ${value[v].job}`;
+    wrapData.appendChild(userInfo)
     let score = [value[v].score[0], value[v].score[1], value[v].score[2], value[v].score[3], value[v].score[4]] 
     let chart = document.createElement('canvas');
-    loadChartManager(score[0], score[1], score[2], score[3], score[4], chart)
-    title.appendChild(chart)
-    let type = document.createElement('p');
-    type.textContent = value[v].type;
-    title.appendChild(type);
+    loadChart(score[0], score[1], score[2], score[3], score[4], chart)
+    userInfo.appendChild(chart)
   }
 }
 
