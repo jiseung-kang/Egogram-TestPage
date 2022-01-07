@@ -1,7 +1,7 @@
 .wrap-data {
   background-color: aliceblue;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-columns: epeat(5, 1fr); */
   margin: 0 auto;
   justify-items: center;
 }
@@ -14,4 +14,30 @@
   width: 200px;
   height: 200px;
   margin: 30px;
+  font-size: 14px;
+  line-height: 16px;;
+}
+
+@media all and (min-width:450px){
+  .wrap-data {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media all and (min-width:600px){
+  .wrap-data {
+    grid-template-columns: repeat(2, 1fr)
+  }
+}
+
+@media all and (min-width:750px){
+  .wrap-data {
+    grid-template-columns: repeat(3, 1fr)
+  }
+}
+
+@media all and (min-width:1250px){
+  .wrap-data {
+    grid-template-columns: repeat(5, 1fr)
+  }
 }

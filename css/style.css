@@ -82,7 +82,8 @@ option {
 .status {
   margin: 30px auto;
   height: 15px;
-  width: 300px;
+  width: 80%;
+  max-width: 500px;
   border-radius: 20px;
   border: 2px solid lightslategray;
   border-width: 100%;
@@ -96,10 +97,11 @@ option {
 }
 
 .box-question {
-  width: 300px;
+  width: 80%;
+  max-width: 500px;
   padding: 10px 5px;
   margin: 30px auto;
-  border-radius: 20px;
+  border-radius: 5px;
   background: whitesmoke;
   font-size: 14px;
 }
@@ -114,8 +116,9 @@ option {
   font-size: 15px;
   margin: 0 5px;
   padding: 5px;
-  width: 70px;
-  background:mistyrose;
+  width: 100px;
+  border-radius: 10px;
+  background: whitesmoke;
   cursor: pointer;
 }
 
@@ -163,12 +166,6 @@ option {
   justify-content: space-between;
 }
 
-.res-desc {
-  display: block;
-  position: relative;
-  font-size: 20px;
-}
-
 .wrap-btn {
   display: flex;
   justify-content: center;
@@ -176,19 +173,11 @@ option {
   margin: 0 auto;
 }
 
-.txt-small {
-  display: block;
-  position: absolute;
-  width: 300px;
-  font-size: 12px;
-  bottom: 10px;
-  left: calc(50% - 150px);
-}
-
 .wrap-res {
   font-family: 'Do Hyeon', sans-serif;
   font-size: 20px;
-  width: 350px;
+  width: 90%;
+  max-width: 500px;
   margin: 0 auto;
 }
 
