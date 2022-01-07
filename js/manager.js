@@ -1,4 +1,5 @@
 const boxDate = document.querySelector('#date');
+const wrapData = document.querySelector('.wrap-data');
 let allData = {}
 let dates = []
 
@@ -25,9 +26,13 @@ function test() {
   for (let date in allData) {
     const value = allData[date]
     for (let v in value) {
-      console.log(v, value[v])
+      // document.write(v, value[v])
       let title = document.createElement('p');
-      title.innerText = `${value[v][2]} ${value[v][4]} ${value[v][0]} ${value[v][1]}`
+      title.textContent = `${value[v].name} ${value[v].sex} ${value[v].age} ${value[v].job}`;
+      wrapData.append(title)
+      let score = [value[v].score[0], value[v].score[1], value[v].score[2], value[v].score[3], value[v].score[4]] 
+      console.log(typeof score)
+      document.querySelector('.test').innerText = `${value[v].name} ${value[v].sex} ${value[v].age} ${value[v].job}`
     }
   }
 }
