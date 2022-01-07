@@ -20,3 +20,28 @@
 - API : Kakao API
 - Cross Browser : Chrome 96.0, Safari 15.1
 - Cross Platform : Web, Mobile
+
+## Project Preview
+### [사용자 페이지](https://www.egogram.shop/)
+
+- 시작 화면
+<img src="./preview/index.png" />
+
+- 정보 입력
+<img src="./preview/info.gif" />
+
+- 테스트 진행
+<img src="./preview/qna.gif" />
+
+- 결과 이동 -> 차트 출력
+<img src="./preview/gores.gif" />
+
+- 결과 출력
+<img src="./preview/res.gif" />
+### [관리자 페이지](https://www.egogram.shop/manager/)
+
+- 시행 일자별 실시간 데이터베이스 로드
+<img src="./preview/load.gif" />
+
+- 차트출력 미디어 쿼리
+<img src="./preview/media.gif" />
