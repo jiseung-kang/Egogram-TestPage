@@ -15,6 +15,9 @@ const boxQuestion = document.querySelector('.box-question')
 const resultType = document.querySelector('.res-type');
 const resultDesc = document.querySelectorAll('.res-desc');
 
+const chart = document.querySelector('#myChart')
+
+
 const date = new Date(+new Date() + 3240 * 10000).toISOString().split("T")[0].replace(/-/g, '');
 
 let userName = "";
@@ -32,7 +35,7 @@ initPage();
 function initPage() {
 	if (location.search != '') {
     let tmp = location.search.replace('?', '').split('-');
-    loadChart(tmp[1],tmp[2],tmp[3],tmp[4],tmp[5])
+    loadChart(tmp[1],tmp[2],tmp[3],tmp[4],tmp[5], chart)
     result = tmp[0];
     btnReset.innerHTML = "나도하기";
     viewResult(result)
@@ -139,7 +142,6 @@ function Next() {
     pageTest.style.display = "none";
     pageResult.style.display = "block";
     calResult();
-    const chart = document.querySelector('#myChart')
     loadChart(total[0], total[1], total[2], total[3], total[4], chart);
     return
   }
