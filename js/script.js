@@ -1,21 +1,17 @@
 const lastIndex = 50;
-// const lastIndex = 5;
+// const lastIndex = 1;
 const btnGo = document.querySelector('.btn-go_info');
 const btnStart = document.querySelector('.btn-start');
 const btnYes = document.querySelector('.btn-yes')
 const btnNo = document.querySelector('.btn-no')
 const btnSoso = document.querySelector('.btn-soso')
-
 const btnShare = document.querySelector('.btn-share')
 const btnReset = document.querySelector('.btn-reset')
-
 const pageMain = document.querySelector('.page-main')
 const pageInfo = document.querySelector('.page-info')
 const pageTest = document.querySelector('.page-test')
 const pageResult = document.querySelector('.page-result')
-
 const boxQuestion = document.querySelector('.box-question')
-
 const resultType = document.querySelector('.res-type');
 const resultDesc = document.querySelectorAll('.res-desc');
 
@@ -26,10 +22,11 @@ let userAge = 0;
 let userSex =  "";
 let userJob = "";
 let code = date;
-
 let total = [0, 0, 0, 0, 0] // cp, np, a, fc, ac
 let result = '';
 let desc = "";
+
+let count = 0;
 
 initPage();
 function initPage() {
@@ -116,7 +113,6 @@ function getInput() {
   userJob = document.querySelector('#job').value;
 }
 
-let count = 0;
 btnYes.addEventListener('click', () =>{
   total[qna[count].a] += 2
   count += 1;
@@ -143,7 +139,8 @@ function Next() {
     pageTest.style.display = "none";
     pageResult.style.display = "block";
     calResult();
-    loadChart(total[0], total[1], total[2], total[3], total[4]);
+    const chart = document.querySelector('#myChart')
+    loadChart(total[0], total[1], total[2], total[3], total[4], chart);
     return
   }
   boxQuestion.textContent = qna[count].q;
@@ -158,49 +155,4 @@ function getData() {
         qna.push(d)
       }
     });
-  }
-
-function loadChart(cp, np, a, fc, ac) {
-  const ctx = document.querySelector('#myChart').getContext('2d');
-  const myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: ['CP', 'NP', 'A', 'FC', 'AC'],
-        datasets: [{
-            label: '결과',
-            data: [cp, np, a, fc, ac],
-            // data: [total[0], total[1], total[2], total[3], total[4]],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1,
-        }]
-    },
-    options: {
-      legend: {
-        display: false
-    },
-      responsive: true,
-      maintainAspectRatio: false,
-      scales: {
-        y: {
-          min: 0,
-          max: 20,
-        }
-      }
-    }
-});
 }
