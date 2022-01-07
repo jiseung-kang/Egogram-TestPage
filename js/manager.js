@@ -1,7 +1,17 @@
 const boxDate = document.querySelector('#date');
 const wrapData = document.querySelector('.wrap-data');
+const wrapDate = document.querySelector('.wrap-date');
 let allData = {}
 let dates = []
+
+wrapDate.addEventListener('change', (event) => {
+  if (event.target.value == 'all'){
+    loadAllUserData();
+  }
+  else{
+  loadSelectedData(event.target.value)
+  }
+})
 
 function loadData() {
   const ref = firebase.database().ref();
@@ -17,31 +27,47 @@ function loadData() {
           allData[date].push(userData[date][j])
         }
       }
-    }).then(() => test())
+      dates = Object.keys(allData)
+  for (let date of dates) {
+    let dateOption = document.createElement('option');
+    dateOption.textContent = date;
+    wrapDate.appendChild(dateOption);
+  }
+    }).then(() => loadAllUserData())
 }
 
 // 전체 데이터 로드
-function test() {
-  dates = Object.keys(allData)
+function loadAllUserData() {
+  
   for (let date in allData) {
     const value = allData[date]
     for (let v in value) {
-      // document.write(v, value[v])
-      let title = document.createElement('p');
+      let title = document.createElement('div');
       title.textContent = `${value[v].name} ${value[v].sex} ${value[v].age} ${value[v].job}`;
-      wrapData.append(title)
+      wrapData.appendChild(title)
       let score = [value[v].score[0], value[v].score[1], value[v].score[2], value[v].score[3], value[v].score[4]] 
-      console.log(typeof score)
-      document.querySelector('.test').innerText = `${value[v].name} ${value[v].sex} ${value[v].age} ${value[v].job}`
+      let chart = document.createElement('canvas');
+      loadChartManager(score[0], score[1], score[2], score[3], score[4], chart)
+      title.appendChild(chart)
     }
   }
 }
 
 // 해당 날짜 데이터 로드
-function test2(date) {
+function loadSelectedData(date) {
+  while(wrapData.hasChildNodes()){
+    wrapData.removeChild(wrapData.firstChild);
+  }
+
   let value = allData[date]
   for (let v in value) {
-    console.log(v, value[v])
+    let title = document.createElement('div');
+    title.textContent = `${value[v].name} ${value[v].sex} ${value[v].age} ${value[v].job}`;
+    wrapData.appendChild(title)
+    let score = [value[v].score[0], value[v].score[1], value[v].score[2], value[v].score[3], value[v].score[4]] 
+    let chart = document.createElement('canvas');
+    loadChartManager(score[0], score[1], score[2], score[3], score[4], chart)
+    title.appendChild(chart)
   }
 }
 

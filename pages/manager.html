@@ -21,14 +21,14 @@
     <form>
       <fieldset>
         <legend class="a11y-blind">시행 날짜별 결과 출력</legend>
-        <select name="date" id="date" required>
+        <select name="date" id="date" required class="wrap-date">
           <option value="" selected hidden>시행 날짜를 선택해주세요.</option>
+          <option value="all">전체 데이터</option>
         </select>
       </fieldset>
     </form>
-    <article class="wrap-data">
+    <article class="res-data">
       <h2 class="a11y-blind">결과 출력</h2>
-      <div class="test"></div>
       <div class="wrap-data"></div>
     </article>
   </section>

@@ -4,3 +4,15 @@ header {
   margin: 0 auto;
 }
 
+.wrap-data {
+  background-color: aliceblue;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.wrap-data div{
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+}

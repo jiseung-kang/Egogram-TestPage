@@ -1,5 +1,5 @@
-function loadChart(cp, np, a, fc, ac) {
-  const ctx = document.querySelector('#myChart').getContext('2d');
+function loadChartManager(cp, np, a, fc, ac, c) {
+  const ctx = c.getContext('2d');
   const myChart = new Chart(ctx, {
     type: 'line',
     data: {
@@ -41,4 +41,5 @@ function loadChart(cp, np, a, fc, ac) {
       }
     }
 });
+return myChart;
 }
