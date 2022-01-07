@@ -1,4 +1,4 @@
-# Project
+# Project : Egogram Test
 
 * 성격유형 테스트 Egogram Test를 교육용으로 개발
 * [사용자 페이지](https://www.egogram.shop/)
