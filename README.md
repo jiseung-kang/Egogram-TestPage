@@ -38,6 +38,7 @@
 
 - 결과 출력
 <img src="./preview/res.gif" />
+
 ### [관리자 페이지](https://www.egogram.shop/manager/)
 
 - 시행 일자별 실시간 데이터베이스 로드
