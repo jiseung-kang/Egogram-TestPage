@@ -9,6 +9,7 @@
 * [관리자 페이지](https://www.egogram.shop/manager/)
   - 시행 일자 선택
   - 응답자의 정보, 응답 그래프 출력
+* [사용자 가이드 문서](https://www.notion.so/choon-sik/Egogram-Test-6430c9bb12fe4003be03c36d43d35269)
   
 ## Tech Stack
 - OS : macOS Monterey
